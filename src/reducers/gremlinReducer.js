@@ -1,9 +1,9 @@
 import { ACTIONS } from '../constants';
 
 const initialState = {
-  host: 'localhost',
-  port: '8182',
-  query: '',
+  host: 'Hardcoded Cosmos DB',
+  port: '443',
+  query: 'g.V().out()',
   error: null
 };
 

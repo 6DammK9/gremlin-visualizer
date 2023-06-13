@@ -1,3 +1,23 @@
+Modified to compatable with [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/gremlin/). It is implemented under [Serge's great sharing](https://github.com/prabushitha/gremlin-visualizer/issues/10) ~~as an open Github issue~~. Thank you Serge. Also I added [the SSL workaround for NodeJS v16+](https://stackoverflow.com/questions/69962209/what-is-openssl-legacy-provider-in-node-js-v17), [the babel-jest fix](https://stackoverflow.com/questions/56528222/npm-start-returns-error-there-might-be-a-problem-with-the-project-dependency), and "some modernization". To start the server, just `yarn` then `yarn start`.
+
+The port has been changed to `4104` / `4105` because of reverse proxy.
+
+Note that you need to create `gremlin-config.json` manually before starting the server:
+
+```
+{
+    "endpoint": "wss://yourendpoint.gremlin.cosmos.azure.com:443/gremlin",
+    "primaryKey": "thePrimaryKey",
+    "database": "findItInTheWebConsole",
+    "collection": "asCalledAsGraphName"
+}
+```
+
+For making query, do not forget query for edges!
+
+![sample view](public/sample.png)
+____
+
 # Gremlin-Visualizer
 This project is to visualize the graph network corresponding to a gremlin query.
 

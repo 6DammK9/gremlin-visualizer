@@ -1,7 +1,7 @@
 {
   "name": "gremlin-visualizer",
   "version": "1.0.0",
-  "author": "Umesh Jayasinghe",
+  "author": "Darren Lau",
   "description": "Visualize graph network corresponding to a gremlin query",
   "license": "MIT",
   "dependencies": {
@@ -10,6 +10,7 @@
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "gremlin": "^3.4.4",
     "lodash": "^4.17.15",
@@ -22,9 +23,9 @@
     "redux-logger": "^3.0.6",
     "vis-network": "^6.4.4"
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "http://localhost:4105",
   "scripts": {
-    "client": "react-scripts start",
+    "client": "cross-env PORT=4104 NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
     "server": "node proxy-server.js",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
